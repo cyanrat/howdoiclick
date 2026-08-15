@@ -200,6 +200,13 @@ p {
   cursor: pointer;
   user-select: none;
   transition: opacity 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.keyboard-overlay:active,
+.keyboard-overlay:focus {
+  outline: none;
 }
 
 .keyboard-overlay.hidden {
@@ -246,6 +253,13 @@ p {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.keyboard-image:active,
+.keyboard-image:focus {
+  outline: none;
 }
 
 @media (max-width: 768px) {
