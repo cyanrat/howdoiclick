@@ -2,20 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>At least watch this gif first</title>
     <link rel="icon" type="image/png" href="/src/icon.png" />
     <style>
       * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
-      html, body {
-        margin: 0;
+      html,
+      body {
         width: 100%;
         height: 100%;
-        background: whitesmoke;
+        background-color: whitesmoke;
         overflow: hidden;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
       }
 
       body {
@@ -25,49 +36,21 @@
         font-family: Arial, sans-serif;
       }
 
-
       .splash {
-        position: relative;
-        display: inline-block;
-      }
-
-/* Invisible overlay shield */
-      .splash::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-    }
-      .splash {
-        display: center;
+        display: flex;
         align-items: center;
         justify-content: center;
-        width: 20%;
-        height: 20%;
-        background: whitesmoke;
-        -webkit-user-drag: none;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
+        width: 100%;
+        height: 100%;
       }
 
       .splash img {
-        max-width: min(80vw, 700px);
-        width: 100%;
+        width: min(80vw, 400px);
         height: auto;
         display: block;
         object-fit: contain;
+        pointer-events: none; /* Mencegah drag, klik kanan, dan interaksi pada gambar */
         -webkit-user-drag: none;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
       }
     </style>
   </head>
@@ -76,6 +59,8 @@
       <img
         src="/src/logo_loading.gif"
         alt="Loading animation"
+        draggable="false"
+        oncontextmenu="return false;"
       />
     </div>
 
