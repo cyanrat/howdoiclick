@@ -42,6 +42,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 8px 12px;
+  color: #2a2624;
 }
 
 .page + .page {
